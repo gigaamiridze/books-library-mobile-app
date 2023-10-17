@@ -1,6 +1,7 @@
 import React from 'react';
 import MaterialIcons from 'react-native-vector-icons/Ionicons';
 import { ITabBarIcon } from '../../interfaces';
+import { scaleFontSize } from '../../styles';
 import { Colors } from '../../constants';
 
 function TabBarIcon(props: ITabBarIcon) {
@@ -8,7 +9,7 @@ function TabBarIcon(props: ITabBarIcon) {
 
   return (
     <MaterialIcons 
-      size={30}
+      size={scaleFontSize(30)}
       name={focused ? fillIcon : outlineIcon}
       color={focused ? Colors.PURPLE : Colors.CADET_BLUE}
     />

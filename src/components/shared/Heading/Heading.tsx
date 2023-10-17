@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, TextStyle } from 'react-native';
 import { IHeadingProps } from '../../../interfaces';
+import { scaleFontSize } from '../../../styles';
 import { getFontFamily } from '../../../utils';
 import { Fonts } from '../../../constants';
 import { styles } from './styles';
@@ -49,7 +50,7 @@ function Heading(props: IHeadingProps) {
           fontFamily === Fonts.SECONDARY && { fontFamily: getFontFamily(fontFamily, '400') },
           fontFamily && fontWeight && { fontFamily: getFontFamily(fontFamily, fontWeight) },
           fontWeight && { fontWeight },
-          lineHeight && { lineHeight },
+          lineHeight && { lineHeight: scaleFontSize(lineHeight) },
           letterSpacing && { letterSpacing },
           textAlign && { textAlign },
           textTransform && { textTransform }

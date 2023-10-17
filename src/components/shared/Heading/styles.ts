@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { getFontFamily } from '../../../utils';
+import { scaleFontSize } from '../../../styles';
 import { Fonts, Colors, Sizes } from '../../../constants';
 
 export const styles = StyleSheet.create({
@@ -8,27 +9,27 @@ export const styles = StyleSheet.create({
     color: Colors.PRIMARY,
   },
   title1: {
-    fontSize: Sizes.XX_LARGE - 5,
-    lineHeight: 48,
+    fontSize: scaleFontSize(Sizes.XX_LARGE - 5),
+    lineHeight: scaleFontSize(48),
   },
   title2: {
-    fontSize: Sizes.X_LARGE - 2,
-    lineHeight: 28,
+    fontSize: scaleFontSize(Sizes.X_LARGE - 2),
+    lineHeight: scaleFontSize(28),
   },
   title3: {
-    fontSize: Sizes.LARGE,
-    lineHeight: 22,
+    fontSize: scaleFontSize(Sizes.LARGE),
+    lineHeight: scaleFontSize(22),
   },
   title4: {
-    fontSize: Sizes.MEDIUM,
-    lineHeight: 18,
+    fontSize: scaleFontSize(Sizes.MEDIUM),
+    lineHeight: scaleFontSize(18),
   },
   title5: {
-    fontSize: Sizes.SMALL + 2,
-    lineHeight: 18,
+    fontSize: scaleFontSize(Sizes.SMALL + 2),
+    lineHeight: scaleFontSize(18),
   },
   title6: {
-    fontSize: Sizes.SMALL,
-    lineHeight: 16,
+    fontSize: scaleFontSize(Sizes.SMALL),
+    lineHeight: scaleFontSize(16),
   },
 });
