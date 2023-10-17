@@ -41,7 +41,7 @@ const userReducer = (state: IUserState, action: UserActionType) => {
 
 export const UserContextProvider = ({ children }: IUserContextProvider) => {
   const [userState, dispatchUser] = useReducer(userReducer, initialUserState);
-  const value = {userState, dispatchUser};
+  const value = { userState, dispatchUser };
 
   return (
     <UserContext.Provider value={value}>
