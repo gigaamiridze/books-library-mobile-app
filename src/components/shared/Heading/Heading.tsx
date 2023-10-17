@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, TextStyle } from 'react-native';
 import { IHeadingProps } from '../../../interfaces';
 import { getFontFamily } from '../../../utils';
+import { Fonts } from '../../../constants';
 import { styles } from './styles';
 
 function Heading(props: IHeadingProps) {
@@ -45,7 +46,9 @@ function Heading(props: IHeadingProps) {
           styles.title,
           styleToApply(),
           color && { color },
+          fontFamily === Fonts.SECONDARY && { fontFamily: getFontFamily(fontFamily, '400') },
           fontFamily && fontWeight && { fontFamily: getFontFamily(fontFamily, fontWeight) },
+          fontWeight && { fontWeight },
           lineHeight && { lineHeight },
           letterSpacing && { letterSpacing },
           textAlign && { textAlign },

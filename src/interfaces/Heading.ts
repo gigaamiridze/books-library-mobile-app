@@ -1,12 +1,10 @@
-import { FontWeightType } from './Font';
-import { IColors } from '../interfaces';
-import { Fonts } from '../constants';
+import { FontFamilyType, FontWeightType } from './Font';
 
 export interface IHeadingProps {
   title: string;
   type: 1 | 2 | 3 | 4 | 5 | 6;
-  color?: keyof IColors;
-  fontFamily?: Fonts.PRIMARY | Fonts.SECONDARY;
+  color?: string;
+  fontFamily?: FontFamilyType;
   fontWeight?: FontWeightType;
   numberOfLines?: number;
   lineHeight?: number;

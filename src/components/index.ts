@@ -3,3 +3,4 @@ export { default as TabBarIcon } from './navigation/TabBarIcon';
 
 // Shared components
 export { default as Heading } from './shared/Heading/Heading';
+export { default as FlexBox } from './shared/FlexBox';
