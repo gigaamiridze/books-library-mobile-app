@@ -1,11 +1,12 @@
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import { Text } from 'react-native';
+import { UserContextProvider } from './src/contexts';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView>
+    <UserContextProvider>    
       <Text>Library Kiosk App</Text>
-    </SafeAreaView>
+    </UserContextProvider>
   );
 }
 
