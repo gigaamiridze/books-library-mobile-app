@@ -4,13 +4,15 @@ import { Colors } from '../../../constants';
 export const styles = StyleSheet.create({
   button: {
     backgroundColor: 'transparent',
+    height: 40,
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor: Colors.PURPLE,
     borderRadius: 8,
-    padding: 12,
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    columnGap: 10,
   },
   disabledButton: {
     backgroundColor: Colors.WHITE,

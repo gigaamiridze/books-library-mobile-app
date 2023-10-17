@@ -1,22 +1,12 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { ActivityIndicator, TouchableOpacity } from 'react-native';
+import { IButtonProps } from '../../../interfaces';
 import { Heading } from '../../../components';
 import { Colors } from '../../../constants';
 import { styles } from './styles';
 
-export interface IButtonProps {
-  title: string;
-  width?: number; 
-  backgroundColor?: string;
-  titleColor?: string;
-  isDisabled?: boolean;
-  isSelected?: boolean;
-  padding?: number;
-  onPress?: () => void;
-}
-
 function Button(props: IButtonProps) {
-  const { title, width, backgroundColor, titleColor, isSelected, isDisabled, padding, onPress } = props;
+  const { title, width, height, backgroundColor, titleColor, isSelected, isDisabled, onPress } = props;
 
   const getTitleColor = () => {
     if (titleColor) return titleColor;
@@ -33,7 +23,7 @@ function Button(props: IButtonProps) {
       style={[
         styles.button,
         width ? { width } : null,
-        padding ? { padding } : null,
+        height ? { height } : null,
         backgroundColor ? { backgroundColor } : null,
         isDisabled && styles.disabledButton,
         isSelected && { backgroundColor: Colors.PURPLE },
@@ -44,6 +34,7 @@ function Button(props: IButtonProps) {
         type={5}
         color={getTitleColor()}
       />
+      {isDisabled && <ActivityIndicator size={22} color={Colors.GAINSBORO} />}
     </TouchableOpacity>
   )
 }
