@@ -2,9 +2,9 @@ import { Dimensions } from 'react-native';
 const { height, width } = Dimensions.get('window');
 
 export enum Sizes {
-  X_SMALL = 10,
-  SMALL = 12,
-  MEDIUM = 16,
+  X_SMALL = 14,
+  SMALL = 16,
+  MEDIUM = 18,
   LARGE = 20,
   X_LARGE = 24,
   XX_LARGE = 44,

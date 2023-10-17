@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { horizontalScale } from './scaling';
 import { Colors, Sizes } from '../constants';
+import { horizontalScale } from './scaling';
 
 export const globalStyles = StyleSheet.create({
   flex: {

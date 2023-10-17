@@ -1,11 +1,21 @@
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { FlexBox, WelcomeSection } from '../components';
+import { globalStyles } from '../styles';
 
 function Services() {
   return (
-    <ScrollView>
-      <Text>Services</Text>
-    </ScrollView>
+    <SafeAreaView style={[globalStyles.flex, globalStyles.backgroundWhite]}>
+      <FlexBox 
+        flexDirection='column' 
+        rowGap={40}
+      >
+        <WelcomeSection 
+          smallTitle='All Your Favorite Books In One Place'
+          bigTitle='Largest Digital Library Of Bestselling eBooks'
+        />
+      </FlexBox>
+    </SafeAreaView>
   )
 }
 

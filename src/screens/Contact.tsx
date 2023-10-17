@@ -1,11 +1,27 @@
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { FlexBox, WelcomeSection } from '../components';
+import { globalStyles } from '../styles';
+import { Routes } from '../constants';
 
 function Contact() {
+  const navigation = useNavigation();
+
   return (
-    <ScrollView>
-      <Text>Contact</Text>
-    </ScrollView>
+    <SafeAreaView style={[globalStyles.flex, globalStyles.backgroundWhite]}>
+      <FlexBox 
+        flexDirection='column' 
+        rowGap={40}
+      >
+        <WelcomeSection 
+          smallTitle='All Your Favorite Books In One Place'
+          bigTitle='Contact Now'
+          backTitle='Back To Home'
+          onBack={() => navigation.navigate(Routes.SERVICES)}
+        />
+      </FlexBox>
+    </SafeAreaView>
   )
 }
 

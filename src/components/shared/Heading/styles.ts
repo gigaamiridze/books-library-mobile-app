@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     color: Colors.PRIMARY,
   },
   title1: {
-    fontSize: scaleFontSize(Sizes.XX_LARGE - 5),
+    fontSize: scaleFontSize(Sizes.XX_LARGE - 4),
     lineHeight: scaleFontSize(48),
   },
   title2: {
@@ -22,14 +22,14 @@ export const styles = StyleSheet.create({
   },
   title4: {
     fontSize: scaleFontSize(Sizes.MEDIUM),
-    lineHeight: scaleFontSize(18),
+    lineHeight: scaleFontSize(20),
   },
   title5: {
-    fontSize: scaleFontSize(Sizes.SMALL + 2),
+    fontSize: scaleFontSize(Sizes.SMALL),
     lineHeight: scaleFontSize(18),
   },
   title6: {
-    fontSize: scaleFontSize(Sizes.SMALL),
+    fontSize: scaleFontSize(Sizes.X_SMALL),
     lineHeight: scaleFontSize(16),
   },
 });
