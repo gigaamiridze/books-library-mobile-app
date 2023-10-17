@@ -6,7 +6,7 @@ export enum Sizes {
   SMALL = 16,
   MEDIUM = 18,
   LARGE = 20,
-  X_LARGE = 24,
+  X_LARGE = 32,
   XX_LARGE = 44,
   WIDTH = width,
   HEIGHT = height,
