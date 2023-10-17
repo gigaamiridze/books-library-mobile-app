@@ -1,5 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, TouchableOpacity } from 'react-native';
+import { horizontalScale, verticalScale, scaleFontSize } from '../../../styles';
 import { IButtonProps } from '../../../interfaces';
 import { Heading } from '../../../components';
 import { Colors } from '../../../constants';
@@ -22,8 +23,8 @@ function Button(props: IButtonProps) {
       onPress={onPress}
       style={[
         styles.button,
-        width ? { width } : null,
-        height ? { height } : null,
+        width ? { width: horizontalScale(width) } : null,
+        height ? { height: verticalScale(height) } : null,
         backgroundColor ? { backgroundColor } : null,
         isDisabled && styles.disabledButton,
         isSelected && { backgroundColor: Colors.PURPLE },
@@ -34,7 +35,12 @@ function Button(props: IButtonProps) {
         type={5}
         color={getTitleColor()}
       />
-      {isDisabled && <ActivityIndicator size={22} color={Colors.GAINSBORO} />}
+      {isDisabled && (
+        <ActivityIndicator 
+          size={scaleFontSize(22)} 
+          color={Colors.GAINSBORO} 
+        />
+      )}
     </TouchableOpacity>
   )
 }
