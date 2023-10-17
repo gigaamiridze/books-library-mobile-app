@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { horizontalScale } from './scaling';
 import { Colors, Sizes } from '../constants';
 
 export const globalStyles = StyleSheet.create({
@@ -9,11 +10,11 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: Colors.WHITE,
   },
   paddingHorizontal: {
-    paddingHorizontal: Sizes.LARGE,
+    paddingHorizontal: horizontalScale(Sizes.LARGE),
   },
   screenContainer: {
     flex: 1,
     backgroundColor: Colors.WHITE,
-    paddingHorizontal: Sizes.LARGE,
+    paddingHorizontal: horizontalScale(Sizes.LARGE),
   },
 }); 
