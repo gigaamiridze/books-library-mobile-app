@@ -1,7 +1,12 @@
-import Toast from 'react-native-toast-message';
+import { ALERT_TYPE, Toast } from 'react-native-alert-notification';
 
-type ToastType = 'info' | 'success' | 'error'; 
+type ToastType = ALERT_TYPE.SUCCESS | ALERT_TYPE.DANGER | ALERT_TYPE.WARNING; 
 
-export const showToast = (type: ToastType, text1: string, text2: string) => {
-  Toast.show({ type, text1, text2 });
+export const showToast = (type: ToastType, title: string, textBody: string) => {
+  Toast.show({
+    type,
+    title,
+    textBody,
+    autoClose: 3000,
+  });
 }

@@ -1,6 +1,7 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { ALERT_TYPE } from 'react-native-alert-notification';
+import { SafeAreaView, ScrollView, View } from 'react-native';
 import { FlexBox, WelcomeSection, Heading, ServiceCard } from '../components';
 import { useLibraryContext } from '../contexts';
 import { Fonts, Routes } from '../constants';
@@ -14,7 +15,7 @@ function Services() {
 
   const handleReturnBookButtonPress = () => {
     if (!libraryState.selectedBook?.id) {
-      showToast('info', 'Borrow a Book', "You haven't borrowed a book yet, please borrow a book.");
+      showToast(ALERT_TYPE.WARNING, 'Borrow a Book', "You haven't borrowed a book yet, please borrow a book.");
     } else {
       // setBookIdModalOpen(true); // TODO:
     }
