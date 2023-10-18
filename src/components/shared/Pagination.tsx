@@ -21,6 +21,7 @@ function Pagination(props: IPaginationProps) {
       <Button
         backgroundColor={Colors.PURPLE}
         titleColor={Colors.WHITE}
+        padding={9}
         isDisabled={currentPage === 0}
         onPress={handlePrevPage}
       >
@@ -38,6 +39,7 @@ function Pagination(props: IPaginationProps) {
       <Button
         backgroundColor={Colors.PURPLE}
         titleColor={Colors.WHITE}
+        padding={9}
         isDisabled={isPreviousData || isFetching}
         onPress={handleNextPage}
       >

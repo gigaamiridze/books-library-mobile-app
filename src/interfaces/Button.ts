@@ -13,6 +13,7 @@ export interface IButtonProps {
 
 export interface ILoaderButtonProps {
   title: string;
+  padding?: number; 
   isDisabled: boolean;
   onPress: (param?: any) => void;
 }

@@ -6,7 +6,7 @@ import { Colors } from '../../../constants';
 import { styles } from './styles';
 
 function Button(props: IButtonProps) {
-  const { title, backgroundColor, titleColor, isDisabled, isSelected, children, onPress } = props;
+  const { title, backgroundColor, titleColor, isDisabled, isSelected, padding, children, onPress } = props;
 
   const getTitleColor = () => {
     if (isDisabled) return Colors.GAINSBORO;
@@ -23,6 +23,7 @@ function Button(props: IButtonProps) {
       style={[
         styles.button,
         backgroundColor ? { backgroundColor } : null,
+        padding ? { padding } : null,
         isDisabled && styles.disabledButton,
         isSelected && { backgroundColor: Colors.PURPLE },
       ]}

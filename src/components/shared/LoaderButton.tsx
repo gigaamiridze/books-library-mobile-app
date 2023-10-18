@@ -5,18 +5,19 @@ import { Button } from '../../components';
 import { Colors } from '../../constants';
 
 function LoaderButton(props: ILoaderButtonProps) {
-  const { title, isDisabled, onPress } = props;
+  const { title, padding, isDisabled, onPress } = props;
   
   return (
     <Button
       title={title}
       backgroundColor={Colors.PURPLE}
       titleColor={Colors.WHITE}
+      padding={padding}
       isDisabled={isDisabled}
       onPress={onPress}
     >
       {isDisabled && (
-        <ActivityIndicator size={16} color={Colors.GAINSBORO} />
+        <ActivityIndicator size={18} color={Colors.GAINSBORO} />
       )}
     </Button>
   )
