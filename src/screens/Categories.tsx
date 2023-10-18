@@ -1,26 +1,41 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { FlexBox, WelcomeSection } from '../components';
+import { SafeAreaView, ScrollView, View } from 'react-native';
+import { FlexBox, WelcomeSection, Heading } from '../components';
+import { Fonts, Routes } from '../constants';
 import { globalStyles } from '../styles';
-import { Routes } from '../constants';
 
 function Categories() {
   const navigation = useNavigation();
 
   return (
     <SafeAreaView style={[globalStyles.flex, globalStyles.backgroundWhite]}>
-      <FlexBox 
-        flexDirection='column' 
-        rowGap={40}
+      <ScrollView 
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 90 }}
       >
-        <WelcomeSection 
-          smallTitle='Explore your favorite book category'
-          bigTitle='Categories'
-          backTitle='Back To Home'
-          onBack={() => navigation.navigate(Routes.SERVICES)}
-        />
-      </FlexBox>
+        <FlexBox 
+          flexDirection='column' 
+          rowGap={60}
+        >
+          <WelcomeSection 
+            smallTitle='Explore your favorite book category'
+            bigTitle='Categories'
+            backTitle='Back To Home'
+            onBack={() => navigation.navigate(Routes.SERVICES)}
+          />
+          <View style={globalStyles.paddingHorizontal}>
+            <FlexBox flexDirection='column' rowGap={40}>
+              <Heading
+                title='Select a category'
+                type={2}
+                fontFamily={Fonts.SECONDARY}
+                textAlign='center'
+              />
+            </FlexBox>
+          </View>
+        </FlexBox>
+      </ScrollView>
     </SafeAreaView>
   )
 }
