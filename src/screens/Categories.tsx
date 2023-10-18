@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView, ScrollView, View, ActivityIndicator, FlatList } from 'react-native';
-import { FlexBox, WelcomeSection, Heading, Button } from '../components';
+import { FlexBox, WelcomeSection, Heading, Button, Pagination } from '../components';
 import { Colors, Fonts, LibraryActions, Routes } from '../constants';
 import { useLibraryContext } from '../contexts';
 import { getBookCategories } from '../api';
@@ -43,7 +43,7 @@ function Categories() {
             onBack={() => navigation.navigate(Routes.SERVICES)}
           />
           <View style={globalStyles.paddingHorizontal}>
-            <FlexBox flexDirection='column' rowGap={40}>
+            <FlexBox flexDirection='column' alignItems='center' rowGap={40}>
               <Heading
                 title='Select a category'
                 type={2}
@@ -75,6 +75,13 @@ function Categories() {
                   )}
                 />
               )}
+              <Pagination 
+                data={categories}
+                currentPage={page}
+                setcurrentPage={setPage}
+                isPreviousData={isPreviousData}
+                isFetching={isFetching}
+              />
             </FlexBox>
           </View>
         </FlexBox>

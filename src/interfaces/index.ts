@@ -1,4 +1,5 @@
 export * from './WelcomeSection';
+export * from './Pagination';
 export * from './TabBarIcon';
 export * from './Heading';
 export * from './Library';
