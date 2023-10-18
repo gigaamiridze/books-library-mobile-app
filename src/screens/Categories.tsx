@@ -67,7 +67,6 @@ function Categories() {
                   keyExtractor={(item) => item.id}
                   renderItem={({ item }) => (
                     <Button
-                      key={item.id}
                       title={item.title}
                       isSelected={selectedCategory === item.title}
                       onPress={() => handleCategorySelection(item.title)}

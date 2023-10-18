@@ -13,7 +13,6 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    columnGap: horizontalScale(10),
   },
   disabledButton: {
     backgroundColor: Colors.WHITE,

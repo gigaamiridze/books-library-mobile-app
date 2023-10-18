@@ -19,24 +19,34 @@ function Pagination(props: IPaginationProps) {
   return (
     <FlexBox flexDirection='row' alignItems='center' columnGap={12}>
       <Button
-        title='Prev'
         backgroundColor={Colors.PURPLE}
         titleColor={Colors.WHITE}
-        onPress={handlePrevPage}
         isDisabled={currentPage === 0}
-      />
+        onPress={handlePrevPage}
+      >
+        <Ionicons 
+          name='caret-back'
+          size={16}
+          color={currentPage === 0 ? Colors.GAINSBORO : Colors.WHITE}
+        />
+      </Button>
       <Heading 
         title={`${currentPage + 1}`}
         type={5}
         fontWeight='500'
       />
       <Button
-        title='Next'
         backgroundColor={Colors.PURPLE}
         titleColor={Colors.WHITE}
-        onPress={handleNextPage}
         isDisabled={isPreviousData || isFetching}
-      />
+        onPress={handleNextPage}
+      >
+        <Ionicons 
+          name='caret-forward'
+          size={16}
+          color={isPreviousData || isFetching ? Colors.GAINSBORO : Colors.WHITE}
+        />
+      </Button>
     </FlexBox>
   )
 }
