@@ -1,31 +1,63 @@
 import React from 'react';
-import { SafeAreaView, View } from 'react-native';
-import { FlexBox, WelcomeSection, Heading } from '../components';
+import { SafeAreaView, ScrollView, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { FlexBox, WelcomeSection, Heading, ServiceCard } from '../components';
+import { useLibraryContext } from '../contexts';
+import { Fonts, Routes } from '../constants';
 import { globalStyles } from '../styles';
-import { Fonts } from '../constants';
+import { showToast } from '../utils';
+import { images } from '../assets';
 
 function Services() {
+  const navigation = useNavigation();
+  const { libraryState } = useLibraryContext();
+
+  const handleReturnBookButtonPress = () => {
+    if (!libraryState.selectedBook?.id) {
+      showToast('info', 'Borrow a Book', "You haven't borrowed a book yet, please borrow a book.");
+    } else {
+      // setBookIdModalOpen(true); // TODO:
+    }
+  }
+
   return (
     <SafeAreaView style={[globalStyles.flex, globalStyles.backgroundWhite]}>
-      <FlexBox 
-        flexDirection='column' 
-        rowGap={60}
+      <ScrollView 
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 90 }}
       >
-        <WelcomeSection 
-          smallTitle='All Your Favorite Books In One Place'
-          bigTitle='Largest Digital Library Of Bestselling eBooks'
-        />
-        <View style={globalStyles.paddingHorizontal}>
-          <FlexBox flexDirection='column' rowGap={20}>
-            <Heading
-              title='Main Services'
-              type={2}
-              fontFamily={Fonts.SECONDARY}
-              textAlign='center'
-            />
-          </FlexBox>
-        </View>
-      </FlexBox>
+        <FlexBox
+          flexDirection='column'
+          rowGap={60}
+        >
+          <WelcomeSection
+            smallTitle='All Your Favorite Books In One Place'
+            bigTitle='Largest Digital Library Of Bestselling eBooks'
+          />
+          <View style={globalStyles.paddingHorizontal}>
+            <FlexBox flexDirection='column' rowGap={40}>
+              <Heading
+                title='Main Services'
+                type={2}
+                fontFamily={Fonts.SECONDARY}
+                textAlign='center'
+              />
+              <ServiceCard
+                image={images.borrowBook}
+                headingTitle='Explore, borrow, enjoy. Dive into a world of stories with our easy book borrowing service.'
+                buttonTitle='Borrow a Book'
+                onPress={() => navigation.navigate(Routes.CATEGORIES)}
+              />
+              <ServiceCard
+                image={images.returnBook}
+                headingTitle='Complete the journey. Return your borrowed books hassle-free and share the reading joy.'
+                buttonTitle='Return a Book'
+                onPress={handleReturnBookButtonPress}
+              />
+            </FlexBox>
+          </View>
+        </FlexBox>
+      </ScrollView>
     </SafeAreaView>
   )
 }

@@ -32,7 +32,7 @@ function Button(props: IButtonProps) {
     >
       <Heading 
         title={title}
-        type={5}
+        type={6}
         color={getTitleColor()}
       />
       {isDisabled && (
