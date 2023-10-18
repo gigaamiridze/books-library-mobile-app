@@ -10,3 +10,9 @@ export interface IButtonProps {
   children?: ReactNode;
   onPress?: () => void;
 }
+
+export interface ILoaderButtonProps {
+  title: string;
+  isDisabled: boolean;
+  onPress: (param?: any) => void;
+}

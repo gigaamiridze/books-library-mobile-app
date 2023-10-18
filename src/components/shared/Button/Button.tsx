@@ -18,6 +18,7 @@ function Button(props: IButtonProps) {
   return (
     <TouchableOpacity
       activeOpacity={0.5}
+      disabled={isDisabled}
       onPress={onPress}
       style={[
         styles.button,
