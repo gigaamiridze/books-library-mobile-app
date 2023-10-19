@@ -8,6 +8,9 @@ export { default as ServiceCard } from './services/ServiceCard/ServiceCard';
 export { default as BookCard } from './selection/BookCard/BookCard';
 export { default as Rating } from './selection/Rating/Rating';
 
+// Modal components
+export { default as LoginModal } from './modals/LoginModal';
+
 // Shared components
 export { default as WelcomeSection } from './shared/WelcomeSection/WelcomeSection';
 export { default as LoaderButton } from './shared/LoaderButton';

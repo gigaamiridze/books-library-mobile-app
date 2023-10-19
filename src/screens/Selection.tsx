@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { ActivityIndicator, SafeAreaView, ScrollView, View, FlatList } from 'react-native';
-import { FlexBox, WelcomeSection, Heading, BookCard, Pagination, LoaderButton } from '../components';
+import { FlexBox, WelcomeSection, Heading, BookCard, Pagination, LoaderButton, LoginModal } from '../components';
 import { Colors, Fonts, LibraryActions, Routes } from '../constants';
 import { useLibraryContext, useUserContext } from '../contexts';
 import { getBooksByCategory } from '../api';
@@ -14,6 +14,7 @@ import { ALERT_TYPE } from 'react-native-alert-notification';
 function Selection() {
   const [page, setPage] = useState<number>(0);
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
+  const [isLoginModalVisible, setLoginModalVisible] = useState<boolean>(false);
   const { libraryState, dispatchLibrary } = useLibraryContext();
   const { userState } = useUserContext();
   const navigation = useNavigation();
@@ -46,7 +47,7 @@ function Selection() {
           // Confirmation modal set to true TODO:
           setIsDisabled(false);
         } else {
-          // Login modal set to true TODO:
+          setLoginModalVisible(true);
           setIsDisabled(false);
         }
       }, 2000);
@@ -129,6 +130,12 @@ function Selection() {
               </FlexBox>
             </FlexBox>
           </View>
+          <LoginModal 
+            isVisible={isLoginModalVisible}
+            animationType='slide'
+            onSuccess={() => {}}
+            onClose={() => setLoginModalVisible(false)}
+          />
         </FlexBox>
       </ScrollView>
     </SafeAreaView>
