@@ -5,6 +5,7 @@ export * from './Heading';
 export * from './Library';
 export * from './FlexBox';
 export * from './Button';
+export * from './Input';
 export * from './Modal';
 export * from './User';
 export * from './Font';

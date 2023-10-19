@@ -18,4 +18,5 @@ export { default as Heading } from './shared/Heading/Heading';
 export { default as Pagination } from './shared/Pagination';
 export { default as Header } from './shared/Header/Header';
 export { default as Button } from './shared/Button/Button';
+export { default as Input } from './shared/Input/Input';
 export { default as FlexBox } from './shared/FlexBox';
