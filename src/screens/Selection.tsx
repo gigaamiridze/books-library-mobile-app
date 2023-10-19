@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { ActivityIndicator, SafeAreaView, ScrollView, View, FlatList } from 'react-native';
-import { FlexBox, WelcomeSection, Heading, BookCard, Pagination } from '../components';
+import { FlexBox, WelcomeSection, Heading, BookCard, Pagination, LoaderButton } from '../components';
 import { Colors, Fonts, LibraryActions, Routes } from '../constants';
-import { useLibraryContext } from '../contexts';
+import { useLibraryContext, useUserContext } from '../contexts';
 import { getBooksByCategory } from '../api';
 import { globalStyles } from '../styles';
 import { useQuery } from 'react-query';
 import { IBook } from '../interfaces';
+import { showToast } from '../utils';
+import { ALERT_TYPE } from 'react-native-alert-notification';
 
 function Selection() {
   const [page, setPage] = useState<number>(0);
-  const navigation = useNavigation();
+  const [isDisabled, setIsDisabled] = useState<boolean>(false);
   const { libraryState, dispatchLibrary } = useLibraryContext();
+  const { userState } = useUserContext();
+  const navigation = useNavigation();
 
   const {
     data: books,
@@ -31,6 +35,26 @@ function Selection() {
       id: book.id,
       title: book.volumeInfo.title,
     }});
+  };
+
+  const checkBookAndShowModal = () => {
+    if (libraryState.selectedBook) {
+      setIsDisabled(true);
+
+      const timeoutId = setTimeout(() => {
+        if (userState.isAuthenticated) {
+          // Confirmation modal set to true TODO:
+          setIsDisabled(false);
+        } else {
+          // Login modal set to true TODO:
+          setIsDisabled(false);
+        }
+      }, 2000);
+
+      return () => clearTimeout(timeoutId);
+    } else {
+      showToast(ALERT_TYPE.WARNING, 'Warning', 'Please select a book.');
+    }
   };
 
   return (
@@ -95,6 +119,12 @@ function Selection() {
                   setcurrentPage={setPage}
                   isPreviousData={isPreviousData}
                   isFetching={isFetching}
+                />
+                <LoaderButton
+                  title='Select'
+                  padding={9}
+                  isDisabled={isDisabled}
+                  onPress={checkBookAndShowModal}
                 />
               </FlexBox>
             </FlexBox>

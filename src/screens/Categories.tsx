@@ -30,7 +30,7 @@ function Categories() {
 
   const handleCategorySelection = (newCategory: string) => {
     dispatchLibrary({ type: LibraryActions.SELECT_CATEGORY, payload: newCategory });
-  }
+  };
 
   const handleNavigate = () => {
     if (selectedCategory) {
@@ -45,7 +45,7 @@ function Categories() {
     } else {
       showToast(ALERT_TYPE.WARNING, 'Warning', 'Please select a book category.');
     }
-  }
+  };
 
   return (
     <SafeAreaView style={[globalStyles.flex, globalStyles.backgroundWhite]}>

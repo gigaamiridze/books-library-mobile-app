@@ -19,7 +19,7 @@ function Services() {
     } else {
       // setBookIdModalOpen(true); // TODO:
     }
-  }
+  };
 
   return (
     <SafeAreaView style={[globalStyles.flex, globalStyles.backgroundWhite]}>

@@ -7,6 +7,6 @@ export const showToast = (type: ToastType, title: string, textBody: string) => {
     type,
     title,
     textBody,
-    autoClose: 3000,
+    autoClose: 2000,
   });
 }
