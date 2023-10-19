@@ -6,6 +6,7 @@ export { default as ServiceCard } from './services/ServiceCard/ServiceCard';
 
 // Selection screen components
 export { default as BookCard } from './selection/BookCard/BookCard';
+export { default as Rating } from './selection/Rating/Rating';
 
 // Shared components
 export { default as WelcomeSection } from './shared/WelcomeSection/WelcomeSection';

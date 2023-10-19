@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Image, View, Text } from 'react-native';
+import { Heading, Rating } from '../../../components';
 import { IBookCardProps } from '../../../interfaces';
-import { Heading } from '../../../components';
 import { Colors } from '../../../constants';
 import { images } from '../../../assets';
 import { styles } from './styles';
@@ -36,7 +36,7 @@ function BookCard(props: IBookCardProps) {
         )
       }
       <View style={styles.infoContent}>
-        <Text>{rating}</Text>
+        <Rating rating={rating} />
         <Heading
           title={title}
           type={4}
