@@ -15,6 +15,7 @@ function BookCard(props: IBookCardProps) {
         styles.cardContainer,
         isSelected && { borderColor: Colors.PURPLE }
       ]}
+      activeOpacity={0.5}
       onPress={onPress}
     >
       {!image

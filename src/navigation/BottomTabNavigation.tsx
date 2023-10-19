@@ -7,8 +7,8 @@ import { Routes } from '../constants';
 const Tab = createBottomTabNavigator();
 
 const screenOptions: BottomTabNavigationOptions = {
-  tabBarShowLabel: false,
   tabBarHideOnKeyboard: true,
+  tabBarShowLabel: false,
   headerShown: false,
   tabBarStyle: {
     position: 'absolute',

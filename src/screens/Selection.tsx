@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { ActivityIndicator, SafeAreaView, ScrollView, View, FlatList } from 'react-native';
 import { FlexBox, WelcomeSection, Heading, BookCard } from '../components';
-import { Colors, Fonts, Routes } from '../constants';
+import { Colors, Fonts, LibraryActions, Routes } from '../constants';
 import { useLibraryContext } from '../contexts';
 import { getBooksByCategory } from '../api';
 import { globalStyles } from '../styles';
 import { useQuery } from 'react-query';
+import { IBook } from '../interfaces';
 
 function Selection() {
   const [page, setPage] = useState<number>(0);
@@ -24,6 +25,13 @@ function Selection() {
     staleTime: 300000, // 5 minutes in milliseconds
     cacheTime: 3600000, // 1 hour in milliseconds
   });
+
+  const handleBookSelection = (book: IBook) => {
+    dispatchLibrary({ type: LibraryActions.SELECT_BOOK, payload: {
+      id: book.id,
+      title: book.volumeInfo.title,
+    }});
+  };
 
   return (
     <SafeAreaView style={[globalStyles.flex, globalStyles.backgroundWhite]}>
@@ -74,7 +82,7 @@ function Selection() {
                         rating={volumeInfo.averageRating}
                         authors={volumeInfo.authors}
                         isSelected={libraryState.selectedBook?.title === volumeInfo.title}
-                        onPress={() => { }}
+                        onPress={() => handleBookSelection(item)}
                       />
                     )
                   }}
