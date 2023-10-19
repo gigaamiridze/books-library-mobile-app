@@ -1,8 +1,11 @@
 // Navigation components
 export { default as TabBarIcon } from './navigation/TabBarIcon';
 
-// Services components
+// Services screen components
 export { default as ServiceCard } from './services/ServiceCard/ServiceCard';
+
+// Selection screen components
+export { default as BookCard } from './selection/BookCard/BookCard';
 
 // Shared components
 export { default as WelcomeSection } from './shared/WelcomeSection/WelcomeSection';
