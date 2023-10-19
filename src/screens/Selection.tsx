@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { ActivityIndicator, SafeAreaView, ScrollView, View, FlatList } from 'react-native';
-import { FlexBox, WelcomeSection, Heading, BookCard } from '../components';
+import { FlexBox, WelcomeSection, Heading, BookCard, Pagination } from '../components';
 import { Colors, Fonts, LibraryActions, Routes } from '../constants';
 import { useLibraryContext } from '../contexts';
 import { getBooksByCategory } from '../api';
@@ -88,6 +88,15 @@ function Selection() {
                   }}
                 />
               )}
+              <FlexBox flexDirection='row' alignItems='center' columnGap={20}>
+                <Pagination
+                  data={books}
+                  currentPage={page}
+                  setcurrentPage={setPage}
+                  isPreviousData={isPreviousData}
+                  isFetching={isFetching}
+                />
+              </FlexBox>
             </FlexBox>
           </View>
         </FlexBox>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Image, View, Text } from 'react-native';
+import { TouchableOpacity, Image, View } from 'react-native';
 import { Heading, Rating } from '../../../components';
 import { IBookCardProps } from '../../../interfaces';
 import { Colors } from '../../../constants';
